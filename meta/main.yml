@@ -1,0 +1,22 @@
+---
+galaxy_info:
+  role_name: linux_user
+  namespace: infra_monkey
+  author: Antoine Gatineau
+  description: Manage Linux users
+  company: Infra-Monkey
+  license: Apache-2.0
+  min_ansible_version: 2.4
+  platforms:
+    - name: Redhat
+      versions:
+        - 6
+        - 7
+        - 8
+    - name: Debian
+      versions:
+        - 9
+        - 10
+  galaxy_tags: []
+dependencies: []
+...

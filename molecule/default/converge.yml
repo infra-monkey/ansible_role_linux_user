@@ -1,0 +1,6 @@
+---
+- name: Converge
+  hosts: all
+  connection: local
+  roles:
+    - role: "infra_monkey.linux_user"
