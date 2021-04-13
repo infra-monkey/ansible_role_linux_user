@@ -14,8 +14,6 @@
       - name: testuser2
         comment: "Test User 2 Name"
         group: testgroup2
-        groups:
-          - docker
         password: "$6$/2Dw9xika4PAS0oT$aZsWkB/j38ksvfCuCL4xCb3t2J0GvCCa4JvQ8M0Y6xwzgbitqKVybXnTNf5ayN00O80bhAfU2KUenQ2J/mpCL0"
         exclusive: true
         sshpubkey: "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDnSHTi+pfSKt4Aa5CvnYH5RaH1phb1VsizHjmgRPXYXCWUvGZdEf8lB1BLm9IZkGnYkaNHMzqUsqDblwmRGIs7LlFFWUeUGM3d8Ndj7vkUUysm58MvyrJ1MwHABAf/LWoskW4mN3gq6hw7mtYS9ksI++vO12IOhURaH9L1eUakfhUClUaVkZ7ZuT8IZeAoAPWCxegV+YGkimBxxAXUQoPpBpt3HiY71oXWARmbIYgV1URPabwgaPwP85P+YZx5/2zP0u08UL+zXHgECKQWJIbOo3gc4H5YWX4zwsGZN6cDjo740ge5AYUNgn3lRSgebn7Ug40iOgeBg4bP2K2igF testuser2@example.com"
