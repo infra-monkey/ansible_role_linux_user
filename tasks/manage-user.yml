@@ -3,7 +3,7 @@
   group:
     name: "{{ item.group | default(item.name) }}"
     state: "{{ item.state | default('present') }}"
-  become: yes
+  become: true
   when: item.name != 'root'
 
 - name: "add new user {{ item.name }}"
@@ -16,7 +16,7 @@
     shell: '/bin/bash'
     createhome: "{{ item.createhome | default(True) }}"
     state: "{{ item.state | default('present') }}"
-  become: yes
+  become: true
   when: item.name != 'root'
 
 - name: "deploy public keys for {{ item.name }}"
@@ -26,5 +26,5 @@
     exclusive: "{{ item.exclusive | default('True') }}"
     state: "{{ item.state | default('present') }}"
   when: item.name != 'root' and item.sshpubkey is defined
-  become: yes
+  become: true
 ...
