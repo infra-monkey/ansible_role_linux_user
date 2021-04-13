@@ -10,8 +10,8 @@ This role manages linux users. You can define the username, groupname, password,
 | users.group | string | no | `user.name` | The principal group the user belongs to |
 | users.groups | string | no | '' | List of additional groups the user belongs to |
 | users.password | string | no | '!!' | The encrypted password to set for the user |
-| users.createhome | boolean | no | `True` | Create home directory for the user |
-| users.exclusive | boolean | no | `True` | Is the ssh public the only one allowed |
+| users.createhome | boolean | no | `true` | Create home directory for the user |
+| users.exclusive | boolean | no | `true` | Is the ssh public the only one allowed |
 | users.sshpubkey | string | no | n.a. | The ssh public key for the user |
 | users.state | string | no | `present` | Should the use be present or absent |
 
@@ -23,7 +23,7 @@ testuser2 has a comment defined and a password is defined (encrypted).
       - name: testuser
         group: testgroup
         password: "!!"
-        exclusive: yes
+        exclusive: true
         sshpubkey: "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDnSHTi+pfSKt4Aa5CvnYH5RaH1phb1VsizHjmgRPXYXCWUvGZdEf8lB1BLm9IZkGnYkaNHMzqUsqDblwmRGIs7LlFFWUeUGM3d8Ndj7vkUUysm58MvyrJ1MwHABAf/LWoskW4mN3gq6hw7mtYS9ksI++vO12IOhURaH9L1eUakfhUClUaVkZ7ZuT8IZeAoAPWCxegV+YGkimBxxAXUQoPpBpt3HiY71oXWARmbIYgV1URPabwgaPwP85P+YZx5/2zP0u08UL+zXHgECKQWJIbOo3gc4H5YWX4zwsGZN6cDjo740ge5AYUNgn3lRSgebn7Ug40iOgeBg4bP2K2igF testuser@example.com"
         state: present
       - name: testuser2
@@ -33,7 +33,7 @@ testuser2 has a comment defined and a password is defined (encrypted).
           - docker
           - myapp
         password: "$6$/2Dw9xika4PAS0oT$aZsWkB/j38ksvfCuCL4xCb3t2J0GvCCa4JvQ8M0Y6xwzgbitqKVybXnTNf5ayN00O80bhAfU2KUenQ2J/mpCL0"
-        exclusive: yes
+        exclusive: true
         sshpubkey: "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDnSHTi+pfSKt4Aa5CvnYH5RaH1phb1VsizHjmgRPXYXCWUvGZdEf8lB1BLm9IZkGnYkaNHMzqUsqDblwmRGIs7LlFFWUeUGM3d8Ndj7vkUUysm58MvyrJ1MwHABAf/LWoskW4mN3gq6hw7mtYS9ksI++vO12IOhURaH9L1eUakfhUClUaVkZ7ZuT8IZeAoAPWCxegV+YGkimBxxAXUQoPpBpt3HiY71oXWARmbIYgV1URPabwgaPwP85P+YZx5/2zP0u08UL+zXHgECKQWJIbOo3gc4H5YWX4zwsGZN6cDjo740ge5AYUNgn3lRSgebn7Ug40iOgeBg4bP2K2igF testuser2@example.com"
         state: present
 
