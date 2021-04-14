@@ -1,0 +1,27 @@
+---
+- name: "add new group {{ item.group }}"
+  group:
+    name: "{{ item.group | default(item.name) }}"
+    state: "{{ item.state | default('present') }}"
+  when: item.name != 'root'
+
+- name: "add new user {{ item.name }}"
+  user:
+    name: "{{ item.name }}"
+    comment: "{{ item.comment | default(item.name) }}"
+    group: "{{ item.group | default(item.name) }}"
+    groups: "{{ item.groups | default(omit) }}"
+    password: "{{ item.password | default(omit) }}"
+    shell: '/bin/bash'
+    createhome: "{{ item.createhome | default(true) }}"
+    state: "{{ item.state | default('present') }}"
+  when: item.name != 'root'
+
+- name: "deploy public keys for {{ item.name }}"
+  authorized_key:
+    user: "{{ item.name }}"
+    key: "{{ item.sshpubkey }}"
+    exclusive: "{{ item.exclusive | default('true') }}"
+    state: "{{ item.state | default('present') }}"
+  when: item.name != 'root' and item.sshpubkey is defined
+...
