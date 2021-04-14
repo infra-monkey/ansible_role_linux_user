@@ -11,10 +11,6 @@ name: Release
     tags:
       - '*'
 
-defaults:
-  run:
-    working-directory: 'infra_monkey.linux_user'
-
 jobs:
   release:
     name: Release
