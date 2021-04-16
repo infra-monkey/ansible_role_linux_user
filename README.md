@@ -42,3 +42,10 @@ generate encrypted password :
 
     $ python -c "import crypt; print crypt.crypt('testpassword2')"
     $6$/2Dw9xika4PAS0oT$aZsWkB/j38ksvfCuCL4xCb3t2J0GvCCa4JvQ8M0Y6xwzgbitqKVybXnTNf5ayN00O80bhAfU2KUenQ2J/mpCL0
+
+# Automatique Testing
+
+This role is tested using Molecule against:
+- Python 3.7 and 3.8
+- CentOS 7/8
+- Debian 9/10
