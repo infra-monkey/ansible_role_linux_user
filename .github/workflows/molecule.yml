@@ -34,7 +34,7 @@ jobs:
       - name: Install dependencies
         run: |
           python3 -m pip install --upgrade pip
-          python3 -m pip install ansible molecule[docker] docker
+          python3 -m pip install ansible ansible-lint molecule[docker] docker
       - name: Test with molecule
         env:
           PY_COLORS: '1'
