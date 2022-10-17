@@ -11,6 +11,7 @@
     comment: "{{ item.comment | default(item.name) }}"
     group: "{{ item.group | default(item.name) }}"
     groups: "{{ item.groups | default(omit) }}"
+    uid: "{{ item.uid | default(omit) }}"
     password: "{{ item.password | default(omit) }}"
     shell: '/bin/bash'
     createhome: "{{ item.createhome | default(true) }}"
