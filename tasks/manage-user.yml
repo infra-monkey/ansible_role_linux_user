@@ -1,11 +1,11 @@
 ---
-- name: "add new group {{ item.group }}"
+- name: "Add new group {{ item.group }}"
   ansible.builtin.group:
     name: "{{ item.group | default(item.name) }}"
     state: "{{ item.state | default('present') }}"
   when: item.name != 'root'
 
-- name: "add new user {{ item.name }}"
+- name: "Add new user {{ item.name }}"
   ansible.builtin.user:
     name: "{{ item.name }}"
     comment: "{{ item.comment | default(item.name) }}"
@@ -18,8 +18,8 @@
     state: "{{ item.state | default('present') }}"
   when: item.name != 'root'
 
-- name: "deploy public keys for {{ item.name }}"
-  ansible_builtin.authorized_key:
+- name: "Deploy public keys for {{ item.name }}"
+  ansible.builtin.authorized_key:
     user: "{{ item.name }}"
     key: "{{ item.sshpubkey }}"
     exclusive: "{{ item.exclusive | default('true') }}"
