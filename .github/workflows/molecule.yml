@@ -15,22 +15,21 @@ jobs:
       max-parallel: 4
       matrix:
         python-version:
-          - 3.7
-          - 3.8
-          - 3.9
+          - "3.9"
+          - "3.10"
         distro:
-          - centos7
-          - centos8
-          #- centos9
-          - debian9
-          - debian10
-          - debian11
+          - "centos7"
+          - "centos8"
+          - "rockylinux9"
+          - "debian9"
+          - "debian10"
+          - "debian11"
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
         with:
           path: 'linux_user'
       - name: Set up Python ${{ matrix.python-version }}
-        uses: actions/setup-python@v2
+        uses: actions/setup-python@v3
         with:
           python-version: ${{ matrix.python-version }}
       - name: Install dependencies

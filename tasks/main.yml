@@ -1,6 +1,5 @@
 ---
-- name: Call manage-users tasks
-  include_tasks: manage-user.yml
+- name: "Call manage-users tasks"
+  ansible.builtin.include_tasks: manage-user.yml
   loop: "{{ users }}"
   when: users is defined
-...

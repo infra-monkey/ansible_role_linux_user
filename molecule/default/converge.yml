@@ -6,6 +6,7 @@
   vars:
     users:
       - name: testuser
+        uid: 10001
         group: testgroup
         password: "!!"
         exclusive: true
