@@ -9,6 +9,7 @@
   user:
     name: "{{ item.name }}"
     comment: "{{ item.comment | default(item.name) }}"
+    uid: "{{ item.uid | default(omit) }}"
     group: "{{ item.group | default(item.name) }}"
     groups: "{{ item.groups | default(omit) }}"
     password: "{{ item.password | default(omit) }}"

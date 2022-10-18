@@ -7,6 +7,7 @@ This role manages linux users. You can define the username, groupname, password,
 | ----- | ---- | -------- | ------------- | ----------- |
 | users.name | string | yes | n.a. | The username to define |
 | users.comment | string | no | `user.name` | The user's description |
+| users.uid | string | no | '' | The uid assigned to the user |
 | users.group | string | no | `user.name` | The principal group the user belongs to |
 | users.groups | string | no | '' | List of additional groups the user belongs to (they must exist) |
 | users.password | string | no | '!!' | The encrypted password to set for the user |

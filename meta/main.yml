@@ -6,19 +6,19 @@ galaxy_info:
   description: Manage Linux users
   company: Infra-Monkey
   license: Apache-2.0
-  min_ansible_version: 2.4
+  min_ansible_version: "2.4"
   platforms:
     - name: EL
       versions:
-        - 6
-        - 7
-        - 8
-        - 9
+        - "6"
+        - "7"
+        - "8"
+        - "9"
     - name: Debian
       versions:
-        - stretch
-        - buster
-        - bullseye
+        - "stretch"
+        - "buster"
+        - "bullseye"
   galaxy_tags: []
 dependencies: []
 ...
