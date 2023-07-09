@@ -19,7 +19,7 @@
   when: item.name != 'root'
 
 - name: "Deploy public keys for {{ item.name }}"
-  ansible.builtin.authorized_key:
+  ansible.posix.authorized_key:
     user: "{{ item.name }}"
     key: "{{ item.sshpubkey }}"
     exclusive: "{{ item.exclusive | default('true') }}"
